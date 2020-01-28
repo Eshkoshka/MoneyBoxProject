@@ -1,5 +1,6 @@
 ﻿using System;
 
+[Binding]
 public class FundAllocationsSteps
 {
     private readonly FundAllocationsPage fundAllocationsPage;
@@ -29,5 +30,12 @@ public class FundAllocationsSteps
     {
         this.fundAllocationsPage.FundTab(tab).Click();
     }
-
+        
+    [Then(@"I can see the percentage in the following order (.*), (.*), (.*)")]
+    public void ThenTheSentActionIsDisplayedForAllTheFollowingUsers(int first, int second, int third)
+    {
+        this.fundAllocationsPage.Percentage(first).Text.Should().Match(first);
+        this.fundAllocationsPage.Percentage(second).Text.Should().Match(second);
+        this.fundAllocationsPage.Percentage(third).Text.Should().Match(third);
+    }
 }

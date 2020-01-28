@@ -16,6 +16,8 @@ public class FundAllocationsPage
 
     public ElementScope FundTab(string fundTabName) => this.BrowserSession.Browser.FindXPath($".//div[@text='{fundTabName}']");
 
+    public ElementScope Percentage(int amount) => this.BrowserSession.Browser.FindXPath($".//div[contains(text(), '{amount}')]");
+
     public void goToPage(string url)
     {
         this.browserSession.Navigate().GoToUrl(url);
