@@ -1,6 +1,4 @@
 # MoneyBoxProject
-
-# MoneyBoxProject
 Please see below answers to QA tasks:
 
 Task 1
